@@ -1,7 +1,7 @@
 const Sum = x => ({
   x,
-  concat: o =>
-    Sum(x + o.x),
+  concat: ({x: y}) =>
+    Sum(x + y),
   inspect: () =>
     `Sum(${x})`
 })
