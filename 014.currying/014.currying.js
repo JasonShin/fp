@@ -13,3 +13,11 @@ const isOdd = modulo(2)
 const res2 = isOdd(22)
 
 console.log(res2)
+
+const filter = pred => xs => xs.filter(pred)
+
+const getAllOdds = filter(isOdd)
+
+const res3 = getAllOdds([1,2,3,4])
+
+console.log(res3)
