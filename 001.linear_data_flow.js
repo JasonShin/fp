@@ -8,6 +8,7 @@
 const Box = x =>
   ({
     map: f => Box(f(x)),
+    fold: f => f(x),
     inspect: () => `Box(${x})`
   })
 
@@ -17,4 +18,5 @@ const nextCharForNumberString = (str) =>
     .map(trimmed => parseInt(trimmed))
     .map(number => number + 1)
     .map(nextNumber => String.fromCharCode(nextNumber))
+    .fold(char => char.toLowerCase())
 console.log(nextCharForNumberString('  65  '))
