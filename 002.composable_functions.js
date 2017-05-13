@@ -9,10 +9,11 @@ const Box = x =>
 const moneyToFloat = str =>
   parseFloat(str.replace(/\$/g, ''))
 */
+// Note: replace fold to map because I'm going to map it over inside applyDiscount
 const moneyToFloat = str =>
   Box(str)
   .map(s => s.replace(/\$/g, ''))
-  .fold(s => parseFloat(s))
+  .map(s => parseFloat(s))
 
 /*
 const percentToFloat = str => {
@@ -21,7 +22,9 @@ const percentToFloat = str => {
   return number * 0.01
 }
 */
+
+// Note: replace fold to map because I'm going to map it over inside applyDiscount
 const percentToFloat = str =>
   Box(s => s.replace(/\%/g, ''))
   .map(replaced => parseFloat(replaced))
-  .fold(number => number * 0.01)
+  .map(number => number * 0.01)
