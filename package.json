@@ -1,0 +1,19 @@
+{
+  "name": "fp_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonShin/fp.git"
+  },
+  "author": "Jason Shin <visualbbasic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JasonShin/fp/issues"
+  },
+  "homepage": "https://github.com/JasonShin/fp#readme"
+}
