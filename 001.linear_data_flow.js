@@ -5,8 +5,14 @@
   return String.fromCharCode(nextNumber)
 }*/
 
+const Box = x =>
+  ({
+    map: f => Box(f(x)),
+    inspect: () => `Box(${x})`
+  })
+
 const nextCharForNumberString = (str) =>
-  [str]
+  Box(str)
     .map(s => s.trim())
     .map(trimmed => parseInt(trimmed))
     .map(number => number + 1)
