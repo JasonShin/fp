@@ -21,3 +21,12 @@ const getAllOdds = filter(isOdd)
 const res3 = getAllOdds([1,2,3,4])
 
 console.log(res3)
+
+const replace = regex => repStr => str => str.replace(regex, repStr)
+
+const censor = replace(/[aeiou]/g)('*')
+
+const res4 = censor('Hello world dododo yo')
+
+console.log(res4)
+
