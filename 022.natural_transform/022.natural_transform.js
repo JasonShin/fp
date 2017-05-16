@@ -39,7 +39,7 @@ const Db = ({
 const eitherToTask = e =>
   e.fold(Task.rejected, Task.of)
 
-Db.find(3)
+Db.find(2)
   .chain(eitherToTask)
   .chain(user =>
     Db.find(user.best_friend_id))
