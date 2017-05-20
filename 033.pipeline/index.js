@@ -20,6 +20,7 @@ const getTopName = R.pipe(
   R.head,
   R.prop('name')
 )
+
 const result = getTopName(teams)
 
 console.log(result)
