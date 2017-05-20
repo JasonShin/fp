@@ -2,7 +2,8 @@ const R = require('ramda')
 const string = `
   aisjfaisgjf
   agijasi
-  
+  toast
+  toast
   qweiwr
   ..
   qigofjqwigfj??
@@ -16,6 +17,6 @@ const countMatchingWords = R.compose(
   countWords,
   matchWords
 )
-const result = countMatchingWords(string)
+const result = countMatchingWords('I really really really love love ramda')
 
 console.log(result)
