@@ -43,15 +43,11 @@ const product = {
 }
 
 const getSizes = R.prop('sizes')
-const sizes = getSizes(product)
-
-const getColors = R.map(R.prop('colors'))
-const colors = getColors(sizes)
-
-const getColorNames = R.map(R.pluck('name'))
-const colorNames = getColorNames(colors)
+const getColors = R.chain(R.prop('colors'))
+const getColorNames = R.pluck('name')
 
 const getUniqueColors = R.compose(
+  R.uniq,
   getColorNames,
   getColors,
   getSizes
