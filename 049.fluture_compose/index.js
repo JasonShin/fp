@@ -1,5 +1,6 @@
 const R = require('ramda')
 const Future = require('ramda-fantasy').Future
+// const Future = require('fluture')
 const fetch = require('node-fetch')
 
 const fetchYesNo = () => {
@@ -14,17 +15,18 @@ const fetchYesNo = () => {
 }
 /*
 const fetchYesNo = () => {
-  return Future((rej, res) => {
-    return fetch('https://yesno.wtf/api')
-      .then(resp => resp.json())
-      .then(res)
+  return Future.encaseP((done) => {
+    fetch('https://yesno.wtf/api')
+      .then(res => res.json())
+      .then(done)
   })
 }
 */
-// fetchYesNo().fork(console.error, console.log)
-
-const yesOrNo = R.compose(
+console.log('future ', Future)
+const getYesOrNo = R.compose(
   R.map(R.prop('answer')),
+  R.chain(fetchYesNo),
   fetchYesNo
 )
-yesOrNo().fork(console.error, console.log)
+
+getYesOrNo().fork(console.error, console.log)
